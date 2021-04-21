@@ -1,0 +1,25 @@
+name: Pipeline
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🍽️ Get working copy
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: 🔬 Check code Style
+        run: isort app -c --diff && black --check --diff app && flake8 app
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🍽️ Get working copy
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: 🚀 Tests
+        run: pytest --cov app/
