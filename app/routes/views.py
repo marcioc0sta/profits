@@ -8,6 +8,6 @@ router = APIRouter()
 @router.post("/profitability-goals", tags=["/profitability-goals"])
 async def profitability_goals(goal: Goal):
     return {
-        "Monthly goal": get_goals(goal)["monthly"],
-        "Anual goal": get_goals(goal)["yearly"],
+        "monthly": get_goals(goal)["monthly"],
+        "yearly": get_goals(goal)["yearly"],
     }

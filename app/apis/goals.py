@@ -3,6 +3,7 @@ from app.helpers.round import round_helper
 
 
 def get_goals(goal):
+    print("get_goals", goal)
     raw_value = npf.rate(
         goal.time,
         -goal.montly_contribution,
