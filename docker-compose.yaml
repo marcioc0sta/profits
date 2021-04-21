@@ -22,3 +22,10 @@ services:
         "--port",
         "8000",
       ]
+  lint:
+    container_name: lint
+    build: *default-build
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: ["./scripts/start-lint.sh"]
