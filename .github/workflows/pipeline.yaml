@@ -10,8 +10,10 @@ jobs:
         uses: actions/checkout@v1
         with:
           fetch-depth: 1
+      - name: 🛠 Build project
+        run: docker-compose build --no-cache lint
       - name: 🔬 Check code Style
-        run: isort app -c --diff && black --check --diff app && flake8 app
+        run: docker-compose up --exit-code-from lint lint
 
   test:
     runs-on: ubuntu-latest
@@ -21,5 +23,7 @@ jobs:
         uses: actions/checkout@v1
         with:
           fetch-depth: 1
+      - name: 🛠 Build project
+        run: docker-compose build --no-cache tests
       - name: 🚀 Tests
-        run: pytest --cov app/
+        run: docker-compose up --exit-code-from tests tests

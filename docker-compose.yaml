@@ -22,3 +22,19 @@ services:
         "--port",
         "8000",
       ]
+  lint:
+    container_name: lint
+    build: *default-build
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: ["./scripts/start-lint.sh"]
+  tests:
+    container_name: shalu-tests
+    build: *default-build
+    working_dir: /app
+    volumes:
+      - .:/app
+    depends_on:
+      - app
+    command: ["./scripts/start-tests.sh"]
