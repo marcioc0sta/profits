@@ -5,6 +5,7 @@ import pytest
 def num_to_round():
     return 0.1123
 
+
 @pytest.fixture
 def goal():
     class Goal(object):
@@ -14,4 +15,3 @@ def goal():
         goal_value = 1750000
 
     return Goal
-    
