@@ -1,3 +1,6 @@
 flake8
 isort
 black
+pytest
+pytest-describe
+pytest-cov
