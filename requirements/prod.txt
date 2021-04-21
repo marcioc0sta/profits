@@ -2,3 +2,4 @@ fastapi==0.61.1
 starlette==0.13.6
 pydantic==1.6.1
 numpy-financial
+requests
