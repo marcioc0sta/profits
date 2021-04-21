@@ -31,7 +31,7 @@ services:
     command: ["./scripts/start-lint.sh"]
   tests:
     container_name: tests
-    image: python:3.9.1-slim
+    build: *default-build
     working_dir: /app
     volumes:
       - .:/app

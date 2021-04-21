@@ -7,4 +7,3 @@ TARGET_FOLDERS="app"
 isort $TARGET_FOLDERS -c --diff
 black --check --diff $TARGET_FOLDERS 
 flake8 $TARGET_FOLDERS
-mypy $TARGET_FOLDERS
