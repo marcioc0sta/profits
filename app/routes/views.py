@@ -1,7 +1,6 @@
-from fastapi import APIRouter
-
-from app.models.Goal import Goal
 from app.apis.goals import get_goals
+from app.models.Goal import Goal
+from fastapi import APIRouter
 
 router = APIRouter()
 
