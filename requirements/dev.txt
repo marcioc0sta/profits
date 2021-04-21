@@ -4,3 +4,4 @@ black
 pytest
 pytest-describe
 pytest-cov
+coverage-badge
