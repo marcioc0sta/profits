@@ -1,4 +1,4 @@
-name: Pipeline
+name: Lint and tests
 on: [push]
 
 jobs:
