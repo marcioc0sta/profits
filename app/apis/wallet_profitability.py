@@ -3,6 +3,8 @@ from app.helpers.round import round_helper
 
 def real_profitability(walletValues):
     # TODO: get the inflation rate via bcb forecast
+    # https://www.bcb.gov.br/api/servico/sitebcb/indicadorinflacao
+    # https://servicodados.ibge.gov.br/api/v3/agregados/7060/periodos/-1/variaveis/2265?localidades=N1[all]
     inflation_rate = 6.1 / 100
     profitability = walletValues.value / walletValues.initial_value - 1
     real_profitability_formula = (1 + profitability) / (1 + inflation_rate) - 1
