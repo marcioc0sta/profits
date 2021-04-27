@@ -17,4 +17,8 @@ async def profitability_goals(goal: Goal):
 
 @router.post("/wallet-profitability", tags=["/wallet-profitability"])
 async def wallet_profitability(walletValues: Wallet_values):
-    return real_profitability(walletValues)
+    return {
+        "profitability": real_profitability(walletValues)["profit"],
+        "real_profitability": real_profitability(walletValues)["real_profit"],
+        "inflation_rate": real_profitability(walletValues)["inflation"] * 100,
+    }
